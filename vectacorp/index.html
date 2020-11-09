@@ -24,7 +24,9 @@
 	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	  <script>
 		    $( function() {
-    $( document ).tooltip();
+	$( document ).tooltip();
+	$( "#tabs" ).tabs();
+	$( "#accordion" ).accordion();
   } );
 	  </script>
 </head>
@@ -58,12 +60,49 @@
 			<h4>Our Solutions</h4> 
 			
 			<!-- INSERT TABS HERE -->
+			 
+<div id="tabs">
+	<ul>
+	  <li><a href="#tabs-1">vconvert</a></li>
+	  <li><a href="#tabs-2">vprospect</a></li>
+	  <li><a href="#tabs-3">vretain</a></li>
+	</ul>
+	<div id="tabs-1">
+		<img src="images/logo_vconvert.gif" alt="first solution">
+	  <p>Need help converting?  Try this option guareenteed.</p>
+	</div>
+	<div id="tabs-2">
+		<img src="images/logo_vprospect.gif" alt="second solution">
+	  <p>Tired of chasing prospects? Let us do it for you!</p>
+	</div>
+	<div id="tabs-3">
+		<img src="images/logo_vretain.gif" alt="third solution">
+	  <p>Retention problems? We can take care of that for you!</p>
+	 
+	</div>
+  </div>
 		</section>
 		
 		<section id="testimonials" class="five columns">
 			<h4>Client Testimonials</h4>
 
 			<!-- INSERT ACCORDION HERE -->
+			<div id="accordion">
+				<h3>Testimony 1</h3>
+				<div>
+				  <p>
+				  Trust the website!  They really helped me solve 
+				  my problems.  Two Thumbs up!
+				  </p>
+				</div>
+				<h3>Testimony 2</h3>
+				<div>
+				  <p>
+				After opting for their retention solution, I never
+				lost a person again.  Really works!
+				  </p>
+				</div>
+			  </div>
 		</section>
 	</main>
 </body>
