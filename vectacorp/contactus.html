@@ -8,6 +8,18 @@
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<style>
+		fieldset {
+		  border: 0;
+		}
+		label {
+		  display: block;
+		  margin: 30px 0 0 0;
+		}
+		.overflow {
+		  height: 200px;
+		}
+	  </style>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -24,7 +36,14 @@
 		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		  <script>
 			    $( function() {
-    $( document ).tooltip();
+	$( document ).tooltip();
+	$( "input" ).checkboxradio();
+	$( "#companysize" ).selectmenu();
+	$( ".widget input[type=submit], .widget a, .widget button" ).button();
+    $( "button, input, a" ).click( function( event ) {
+      event.preventDefault();
+    } );
+
   } );
 		  </script>
 </head>
@@ -62,27 +81,35 @@
 			    
 			    Email:
 				<input type="email" name="email" maxlength="30" required="">
-			   
-                What VectaCorp products are you interested in?<br>
+			   <div class="widget">
+
+
+				What VectaCorp products are you interested in?<br>
+				<fieldset>
 			    <label for="vProspect"><input type="checkbox" name="product" value="vProspect" id="vProspect">vProspect 2.0</label>
 			    <label for="vConvert"><input type="checkbox" name="product" value="vConvert" id="vConvert">vConvert 2.0</label>
 			    <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain">vRetain 1.0</label>
-			    
+			</fieldset>
 			    <br>
-			    What is your current infrastructure?<br>
+				What is your current infrastructure?<br>
+				<fieldset>
 			    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
 			    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
 			    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
-			    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
-
+				<label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
+			</fieldset>
+			</div>
 			    <br>
-			    How many employees do you have?
+				How many employees do you have?
+				<fieldset>
+					<label for="companysize">Select a Company Size</label>
 			    <select name="companysize">
                     <option value="1-10">1-10</option>
                     <option value="11-100">11-100</option>
                     <option value="101-1000">101-1000</option>
                     <option value="More than 1000">More than 1000</option>
-		        </select>
+				</select>
+			</fieldset>
                 
 			    How did you hear about us?
 			    <select name="hearaboutus" multiple="" size="5">
@@ -94,8 +121,8 @@
 		        </select>
                 
 			    Questions or comments for our sales representatives?
-			    <textarea name="questions" size="30" rows="5"></textarea>
-			    <input type="submit" name="submit" value="Submit Now">
+				<textarea name="questions" size="30" rows="5"></textarea>
+			    <input type="submit" value="Submit Now">
 		    	</fieldset>
 			</form>
 	    </section>
