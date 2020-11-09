@@ -15,6 +15,8 @@
 
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="js/jquery.mobilemenu.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://malsup.github.com/jquery.cycle2.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
@@ -24,9 +26,22 @@
 		  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		  <script>
 		    $( function() {
-    $( document ).tooltip();
+	$( document ).tooltip();
+	$( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+	$( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+	$( '.mySlideshows' ).cycle();
+
   } );
 	  </script>
+
+	    <style>
+			.ui-tabs-vertical { width: 55em; }
+			.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }
+			.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }
+			.ui-tabs-vertical .ui-tabs-nav li a { display:block; }
+			.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }
+			.ui-tabs-vertical .ui-tabs-panel { padding: 1em; float: right; width: 40em;}
+			</style>
 </head>
 <body>
 	<main class="container">
@@ -59,11 +74,50 @@
             
             <h4>Management Team</h4>
             
-            <!-- INSERT VERTICAL TABS HERE -->
+			<!-- INSERT VERTICAL TABS HERE -->
+			<div id="tabs">
+				<ul>
+				  <li><a href="#tabs-1">John Hancock</a></li>
+				  <li><a href="#tabs-2">Chew Baca</a></li>
+				  <li><a href="#tabs-3">Natalie Holmes</a></li>
+				  <li><a href="#tabs-4">Tony Danza</a></li>
+				  <li><a href="#tabs-5">Tom Ford</a></li>
+				</ul>
+				<div id="tabs-1">
+				  <h2>CEO</h2>
+				  <p>Our fearless leader.  John has led many companies to record earnings.</p>
+				</div>
+				<div id="tabs-2">
+				  <h2>Vice President</h2>
+				  <p>20 years experience.  Chew brings consistent leadership to any organization.</p>
+				</div>
+				<div id="tabs-3">
+				  <h2>Head of Sales</h2>
+				  <p>Natalies has set the record in sales for 10 consecutive years.</p>
+				</div>
+				<div id="tabs-4">
+					<h2>Chief Technology Officer</h2>
+				<p>Tony brings 15 Years of leading tech teams to success.  Tony holds an PHD from UCLA.</p>
+				
+				</div>
+				<div id="tabs-5">
+					<h2>Diversity and Inclusion Chief</h2>
+					<p>Tom has experience working with numerous people of different backgrounds.</p>
+				
+				  </div>
+			  </div>
             
-            <h4>Our New Headquarters</h4>
+			<h4>Our New Headquarters</h4>
+
             
-            <!-- INSERT CYCLE 2 HERE -->
+			<!-- INSERT CYCLE 2 HERE -->
+			<div class="cycle-slideshow">
+				<img src="images/building_01.jpg">
+				<img src="images/building_02.jpg">
+				<img src="images/building_03.jpg">
+				<img src="images/building_04.jpg">
+				<img src="images/building_05.jpg">
+			</div>
         </section>
 		
 		<section id="testimonials" class="five columns">
